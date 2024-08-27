@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Front Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #06354e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://img.freepik.com/free-psd/3d-rendering-questions-background_23-2151455632.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            background-color: hsl(273, 29%, 29%);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            opacity: 0.1;
+            animation: fadeInUpContainer 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUpContainer {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 100px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInDown 1s 0.5s forwards, colorChange 3s infinite, moveAndScale 5s infinite;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #FFF;
+            }
+            25% {
+                color: #f39c12; /* Yellow */
+            }
+            50% {
+                color: #e74c3c; /* Red */
+            }
+            75% {
+                color: #2ecc71; /* Green */
+            }
+            100% {
+                color: #3498db; /* Blue */
+            }
+        }
+
+        @keyframes moveAndScale {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            25% {
+                transform: translateY(-20px) scale(1.1);
+            }
+            50% {
+                transform: translateY(0) scale(1);
+            }
+            75% {
+                transform: translateY(20px) scale(0.9);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        p.description {
+            color: #c2f91c;
+            font-size: 29px;
+            margin: 10px 0 20px;
+        }
+
+        .start-btn {
+            background-color: #16a50c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 26px;
+        }
+
+        .start-btn:hover {
+            background-color: #0a601d;
+        }
+
+        .instructions {
+            color: #18e1e8;
+            text-align: left;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 80px;
+            }
+
+            p.description {
+                font-size: 24px;
+            }
+
+            .start-btn {
+                font-size: 22px;
+                padding: 8px 16px;
+            }
+
+            .instructions {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 60px;
+            }
+
+            p.description {
+                font-size: 20px;
+            }
+
+            .start-btn {
+                font-size: 18px;
+                padding: 6px 12px;
+            }
+
+            .instructions {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        <p class="description">Test your knowledge with this fun and challenging quiz! Can you score 100%?</p>
+        <a href="index2.html"><button class="start-btn" onclick="startQuiz()">Start Quiz</button></a>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>There are 10 questions in total.</li>
+                <li>You have 15 minutes to complete the quiz.</li>
+                <li>No negative marking for wrong answers.</li>
+            </ul>
+        </div>
+   
+        <footer>
+            © 2024 QuizMaster. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        function startQuiz() {
+            // Redirect to quiz page
+            window.location.href = "quiz.html";
+        }
+    </script>
+</body>
+</html>

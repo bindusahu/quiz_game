@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz Application</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+
+    
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen">
+      
+        <h1>Ready to Challenge?</h1>
+    
+    
+        <button id="startButton"></button>
+      </div>  
+    
+    <!-- Quiz Screen -->
+    <div class="container">
+    <div id="quizScreen" class="screen hidden">
+        <div id="sidebar">
+            <h2>Categories</h2>
+            <div id="categoryStatuses">
+                <div class="category" id="englishCategory">
+                    <h3>English</h3>
+                    <div class="questionsList" id="englishQuestions"></div>
+                </div>
+                <div class="category" id="gkCategory">
+                    <h3>General Knowledge</h3>
+                    <div class="questionsList" id="gkQuestions"></div>
+                </div>
+                <div class="category" id="mathCategory">
+                    <h3>Math</h3>
+                    <div class="questionsList" id="mathQuestions"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mainContent">
+            <h2 id="questionCategory">Category: <span id="category"></span></h2>
+            <h2 id="question"></h2>
+            <img id="questionImage" src="" alt="Question Image" class="hidden">
+            <div id="options">
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+            </div>
+            <div id="feedback" class="hidden"></div>
+            <div id="navigationButtons">
+                <button id="prevButton" class="hidden">Previous</button>
+                <button id="nextButton">Next</button>
+                <button id="skipButton">skip</button>
+            </div>
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+            </div>
+            <div id="questionNumber">Question <span id="questionIndex">1</span> of <span id="totalQuestions">30</span></div>
+            <div id="timer">Time Left: <span id="time">300</span> seconds</div>
+        </div>
+    </div>
+    
+    <!-- Result Screen -->
+<div id="resultScreen" class="screen hidden">
+    <h1>Quiz Completed!</h1>
+    <div class="result-container">
+        <p>Total Marks:</p>
+        <p id="totalMarks">300</p>
+    </div>
+    <div class="result-container">
+        <p>Obtained Marks:</p>
+        <p id="score">0</p>
+    </div>
+    <button id="restartButton"></button>
+</div>
+    
+    <!-- Audio Elements for Correct and Incorrect Answers -->
+    <audio id="correctSound" src="correct-sound.mp3"></audio>
+    <audio id="incorrectSound" src="incorrect-sound.mp3"></audio>
+
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>

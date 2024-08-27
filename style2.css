@@ -1,0 +1,614 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('quiz-background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.screen {
+    text-align: center;
+    background:(136, 134, 177);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+
+    border-style: double;
+    border-color: darkblue;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+#sidebar {
+    width: 30%;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #ddd;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#categoryStatuses {
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.questionsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.questionsList .box {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: lightgrey;
+}
+
+.questionsList .box.complete {
+    background-color: green;
+}
+
+.questionsList .box.incomplete {
+    background-color: red;
+}
+
+#mainContent {
+    width: 70%;
+    padding: 10px;
+}
+
+ h2 {
+    margin: 0 0 20px;
+    color: #333;
+}
+h1{
+    font-size: 500%;
+    color:red;
+   margin: 2rem;
+}
+
+#questionCategory {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#questionImage {
+    max-width: 100%;
+    margin: 20px 0;
+}
+#startButton {
+    background-image: url("https://quizizz.com/media/resource/gs/quizizz-media/quizzes/330f82cd-17fa-4462-9843-bfc0e96930d8");
+    background-size: cover; /* Ensure the image covers the button */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 700px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    border: none;
+    border-radius: 3rem;
+    display: flex; /* To center text if needed */
+    align-items: center; /* Center text vertically if needed */
+    justify-content: center; /* Center text horizontally if needed */
+  
+    margin: 4rem;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px;
+}
+
+.option.correct {
+    background-color: green;
+    color: white;
+}
+
+.option.incorrect {
+    background-color: red;
+    color: white;
+}
+
+#timer {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #d9534f;
+}
+
+#progressBarContainer {
+    margin-top: 20px;
+}
+
+#progressBar {
+    height: 10px;
+    background-color: #4CAF50;
+    width: 0%;
+    border-radius: 5px;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#navigationButtons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#questionNumber {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#questionNumber span {
+    font-weight: bold;
+}
+
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+    .container{
+        width: 50%;
+    }
+    .screen {
+        width: 95%;
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+
+    #startButton {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #questionCategory {
+        font-size: 18px;
+    }
+
+    #options {
+        flex-direction: column;
+    }
+
+    .option {
+        margin: 5px 0;
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 14px;
+    }
+}
+
+/* For mobile devices (phones) */
+@media (max-width: 480px) {
+    .screen {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #startButton {
+        padding: 50px;
+        margin-top: 150px;
+    }
+
+    #questionCategory {
+        font-size: 16px;
+    }
+
+    #options {
+        flex-direction: column;
+    }
+
+    .option {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 12px;
+    }
+
+    #sidebar {
+        display: none; /* Hide sidebar on very small screens */
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+}
+
+
+#restartButton{
+    background-image: url("https://as2.ftcdn.net/v2/jpg/01/09/93/69/1000_F_109936958_Ykd1Hn9oniAPjjUjYFpKjIipZ8efDSnb.jpg");
+    background-size: cover; /* Ensure the image covers the button */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 700px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    border: none;
+    border-radius: 3rem;
+    display: flex; /* To center text if needed */
+    align-items: center; /* Center text vertically if needed */
+    justify-content: center; /* Center text horizontally if needed */
+  
+    margin: 1rem;
+}
+ 
+#totalMarks{
+    font-size: 40px;
+}
+
+#score{
+    font-size: 40px;
+}
+p{
+    font-size: 30px;
+}
+
+
+/* For large smartphones and phablets (portrait) */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Adjust width as needed */
+    }
+
+    .screen {
+        padding: 15px; /* Adjust padding as needed */
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Adjust font size as needed */
+    }
+
+    #startButton, #restartButton {
+        width: 100%;
+        max-width: 400px; /* Adjust max-width as needed */
+    }
+
+    #questionCategory {
+        font-size: 1.4rem; /* Adjust font size as needed */
+    }
+
+    #options .option {
+        padding: 8px; /* Adjust padding as needed */
+        font-size: 0.9rem; /* Adjust font size as needed */
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 0.85rem; /* Adjust font size as needed */
+    }
+
+    #sidebar {
+        width: 100%;
+        display: block; /* Show sidebar with full width */
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+}
+
+/* For small smartphones (portrait) */
+@media (max-width: 400px) {
+    .container {
+        width: 95%; /* Adjust width as needed */
+    }
+
+    .screen {
+        padding: 8px; /* Adjust padding as needed */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size as needed */
+    }
+
+    #startButton, #restartButton {
+        width: 100%;
+        max-width: 280px; /* Adjust max-width as needed */
+        height: 100px; /* Adjust height as needed */
+        font-size: 1rem; /* Adjust font size as needed */
+    }
+
+    #questionCategory {
+        font-size: 1rem; /* Adjust font size as needed */
+    }
+
+    #options .option {
+        padding: 6px; /* Adjust padding as needed */
+        font-size: 0.75rem; /* Adjust font size as needed */
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 0.75rem; /* Adjust font size as needed */
+    }
+
+    #sidebar {
+        display: none; /* Hide sidebar on very small screens */
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+}
+
+/* For extra small smartphones (portrait) */
+@media (max-width: 320px) {
+    .container {
+        width: 100%; /* Adjust width as needed */
+    }
+
+    .screen {
+        padding: 5px; /* Adjust padding as needed */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust font size as needed */
+    }
+
+    #startButton, #restartButton {
+        width: 100%;
+        max-width: 240px; /* Adjust max-width as needed */
+        height: 80px; /* Adjust height as needed */
+        font-size: 0.9rem; /* Adjust font size as needed */
+    }
+
+    #questionCategory {
+        font-size: 0.9rem; /* Adjust font size as needed */
+    }
+
+    #options .option {
+        padding: 4px; /* Adjust padding as needed */
+        font-size: 0.7rem; /* Adjust font size as needed */
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 0.7rem; /* Adjust font size as needed */
+    }
+
+    #sidebar {
+        display: none; /* Hide sidebar on very small screens */
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+}
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Adjust width as needed */
+    }
+
+    .screen {
+        width: 95%; /* Adjust width as needed */
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+
+    #startButton, #restartButton {
+        width: 100%;
+        max-width: 500px; /* Adjust max-width as needed */
+    }
+
+    h1 {
+        font-size: 3rem; /* Adjust font size as needed */
+    }
+
+    #questionCategory {
+        font-size: 1.5rem; /* Adjust font size as needed */
+    }
+
+    #options .option {
+        margin: 5px 0;
+        font-size: 1rem; /* Adjust font size as needed */
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 0.9rem; /* Adjust font size as needed */
+    }
+}
+
+/* For mobile devices (phones) */
+@media (max-width: 480px) {
+    .screen {
+        padding: 10px; /* Adjust padding as needed */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust font size as needed */
+    }
+
+    #startButton, #restartButton {
+        padding: 20px; /* Adjust padding as needed */
+        margin-top: 100px; /* Adjust margin-top as needed */
+        width: 100%; /* Adjust width as needed */
+        max-width: 300px; /* Adjust max-width as needed */
+    }
+
+    #questionCategory {
+        font-size: 1.2rem; /* Adjust font size as needed */
+    }
+
+    #options .option {
+        padding: 8px; /* Adjust padding as needed */
+        font-size: 0.8rem; /* Adjust font size as needed */
+    }
+
+    #timer, #feedback, #navigationButtons, #progressBarContainer, #questionNumber {
+        font-size: 0.8rem; /* Adjust font size as needed */
+    }
+
+    #sidebar {
+        display: none; /* Hide sidebar on very small screens */
+    }
+
+    #mainContent {
+        width: 100%;
+    }
+} 
+
+
+/* Basic styling */
+#resultScreen {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Heading styling */
+#resultScreen h1 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for result container */
+.result-container {
+    margin-bottom: 15px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Styling for individual text */
+#resultScreen p {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Highlighting obtained marks */
+#resultScreen #score {
+    font-weight: bold;
+    color: #ff6347;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Highlighting total marks */
+#resultScreen #totalMarks {
+    font-weight: bold;
+    color: #2ecc71;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Styling for restart button */
+#restartButton {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Hover effect for restart button */
+#restartButton:hover {
+    background-color: #357ABD;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
